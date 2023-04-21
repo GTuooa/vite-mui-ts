@@ -4,6 +4,8 @@ import { Typography, Stack, Container } from '@mui/material';
 import Counter from '@/components/Counter/Counter';
 
 const Home = () => {
+  console.log("env", import.meta.env);
+  
   return (
     <Container sx={{ py: 2, position: 'relative' }}>
       <Stack gap={1} my={2}>
@@ -14,8 +16,9 @@ const Home = () => {
           React + TS + Vite + Redux + RTK + MUI + RRD + Prettier
         </Typography>
       </Stack>
-      <TemplateTester />
-      <Counter />
+      <Typography>环境：{import.meta.env.VITE_TYPE}</Typography>
+      {/* <TemplateTester /> */}
+      {/* <Counter /> */}
     </Container>
   );
 };
