@@ -1,11 +1,11 @@
-import React from 'react';
-import { Box, Button, Stack } from '@mui/material';
-import { decrement, increment } from '@/features/counterSlice';
-import { useAppDispatch, useAppSelector } from '@/app/store';
+import React from 'react'
+import { Box, Button, Stack } from '@mui/material'
+import { decrement, increment } from '@/features/counterSlice'
+import { useAppDispatch, useAppSelector } from '@/app/store'
 
 const Counter = () => {
-  const dispatch = useAppDispatch();
-  const count = useAppSelector((state) => state.counter.count);
+  const dispatch = useAppDispatch()
+  const count = useAppSelector((state) => state.counter.count)
 
   return (
     <Stack
@@ -53,7 +53,7 @@ const Counter = () => {
         +
       </Button>
     </Stack>
-  );
-};
+  )
+}
 
-export default Counter;
+export default Counter

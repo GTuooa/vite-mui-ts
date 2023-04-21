@@ -1,33 +1,33 @@
-import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
-import { useAppSelector } from '@/app/store';
-import { PaletteMode } from '@mui/material';
-import * as React from 'react';
+import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles'
+import { useAppSelector } from '@/app/store'
+import { PaletteMode } from '@mui/material'
+import * as React from 'react'
 type Props = {
-  children?: React.ReactNode;
-};
+  children?: React.ReactNode
+}
 
 declare module '@mui/material/styles' {
   // index signature typegradients
 
   interface TypeGradient {
-    [key: string]: string;
+    [key: string]: string
   }
 
   interface Palette {
-    gradient: TypeGradient;
+    gradient: TypeGradient
   }
   interface PaletteOptions {
-    gradient: TypeGradient;
+    gradient: TypeGradient
   }
 
   interface TypeBackground {
-    opposite: string;
+    opposite: string
   }
 }
 
 //children with ReactNode type
 export const AppThemeProvider: React.FC<Props> = ({ children }) => {
-  const mode = useAppSelector((state) => state.user.mode);
+  const mode = useAppSelector((state) => state.user.mode)
 
   const theme = responsiveFontSizes(
     createTheme({
@@ -112,7 +112,7 @@ export const AppThemeProvider: React.FC<Props> = ({ children }) => {
         },
       },
     }),
-  );
+  )
 
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
-};
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
+}

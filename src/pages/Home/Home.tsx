@@ -1,11 +1,11 @@
-import React from 'react';
-import TemplateTester from '@/components/TemplateTester/TemplateTester';
-import { Typography, Stack, Container } from '@mui/material';
+import React from 'react'
+import TemplateTester from '@/components/TemplateTester/TemplateTester'
+import { Typography, Stack, Container } from '@mui/material'
 import Counter from '@/components/Counter/Counter'
 
 const Home = () => {
-  console.log("env--",import.meta.env);
-  
+  console.log('env--', import.meta.env)
+
   return (
     <Container sx={{ py: 2, position: 'relative' }}>
       <Stack gap={1} my={2}>
@@ -17,10 +17,10 @@ const Home = () => {
         </Typography>
       </Stack>
       <Typography>环境：{import.meta.env.VITE_TYPE}</Typography>
-      {/* <TemplateTester /> */}
-      {/* <Counter /> */}
+      <TemplateTester />
+      <Counter />
     </Container>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

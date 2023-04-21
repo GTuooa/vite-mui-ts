@@ -1,11 +1,11 @@
-import React from 'react';
-import { changeMode } from '@/features/user/userSlice';
-import { Stack, Box, Typography, IconButton, TypographyVariant, SxProps, Theme } from '@mui/material';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import { useAppDispatch, useAppSelector } from '@/app/store';
+import React from 'react'
+import { changeMode } from '@/features/user/userSlice'
+import { Stack, Box, Typography, IconButton, TypographyVariant, SxProps, Theme } from '@mui/material'
+import Brightness4Icon from '@mui/icons-material/Brightness4'
+import { useAppDispatch, useAppSelector } from '@/app/store'
 const TemplateTester = () => {
-  const dispatch = useAppDispatch();
-  const mode = useAppSelector((state) => state.user.mode);
+  const dispatch = useAppDispatch()
+  const mode = useAppSelector((state) => state.user.mode)
 
   const colors = [
     {
@@ -63,7 +63,7 @@ const TemplateTester = () => {
       type: 'gradient',
       colors: ['bronze', 'silver', 'gold'],
     },
-  ];
+  ]
   const typographies = [
     'h1',
     'h2',
@@ -80,7 +80,7 @@ const TemplateTester = () => {
     'caption',
     'button',
     'overline',
-  ];
+  ]
   const themeTypes = (type: string, func: JSX.Element[]) => (
     <Stack
       sx={{
@@ -102,7 +102,7 @@ const TemplateTester = () => {
         />
       </IconButton>
     </Stack>
-  );
+  )
 
   const colorCards = colors.map((cat) => (
     <Stack key={cat.type} gap={1}>
@@ -133,20 +133,20 @@ const TemplateTester = () => {
         ))}
       </Stack>
     </Stack>
-  ));
+  ))
 
   const typoCards = typographies.map((typo) => (
     <Stack key={typo} gap={1}>
       <Typography variant={typo as TypographyVariant}>{typo}</Typography>
     </Stack>
-  ));
+  ))
 
   return (
     <Stack gap={5}>
       {themeTypes('#Colors', colorCards)}
       {themeTypes('#Typography', typoCards)}
     </Stack>
-  );
-};
+  )
+}
 
-export default TemplateTester;
+export default TemplateTester
